@@ -6,7 +6,7 @@ A public-safe demo application for exploring synthetic SharePoint-style document
 
 This project is safe for public review. It uses synthetic demo data by default and does not include real tenant data, customer data, credentials, secrets, or production exports.
 
-The public contest version does not include real customer or Microsoft 365 tenant data. All included users, groups, sites, libraries, folders, files, permissions, audit events, and risk insights are synthetic.
+The public hackathon version does not include real customer or Microsoft 365 tenant data. All included users, groups, sites, libraries, folders, files, permissions, audit events, and risk insights are synthetic.
 
 To connect a real Microsoft 365 tenant, create a local `.env` file based on `.env.example`. Real Microsoft Graph, SharePoint, Purview, and Fabric integrations require local environment variables. Do not commit `.env` or any other `.env.*` file containing credentials.
 
