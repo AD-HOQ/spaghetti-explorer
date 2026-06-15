@@ -1,0 +1,25 @@
+[
+  {
+    "id": "generated-by-local-engine",
+    "type": "DormantBroadExposure",
+    "severity": "Critical",
+    "title": "Dormant file broadly shared",
+    "summary": "Synthetic demo file has not been accessed in more than 36 months and remains broadly exposed.",
+    "resourceId": "resource-compensation-2021",
+    "nodeIdToOpen": "file-compensation-2021",
+    "resourceName": "Compensation_2021.xlsx",
+    "resourcePath": "/Finance/Archive/Compensation_2021.xlsx",
+    "evidence": {
+      "resourceId": "resource-compensation-2021",
+      "nodeId": "file-compensation-2021",
+      "lastAccessedDate": "2021-01-10T00:00:00.000Z",
+      "daysSinceLastAccess": 1095,
+      "exposure": "Everyone Except External Users",
+      "sensitivityLabel": "Highly Confidential"
+    },
+    "recommendedAction": "Review inherited permissions, remove broad sharing, or archive/restrict the file before Copilot rollout.",
+    "status": "Open",
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "source": "LocalRules"
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "resources": [
+    {
+      "id": "resource-compensation-2021",
+      "nodeId": "file-compensation-2021",
+      "resourceType": "File",
+      "name": "Compensation_2021.xlsx",
+      "path": "/Finance/Archive/Compensation_2021.xlsx",
+      "sensitivityLabel": "Highly Confidential",
+      "lastAccessedDate": "2021-01-10T00:00:00.000Z",
+      "lastModifiedDate": "2021-01-10T00:00:00.000Z",
+      "isIndexedByCopilot": true
+    },
+    {
+      "id": "resource-legal-ma",
+      "nodeId": "folder-legal-ma",
+      "resourceType": "Folder",
+      "name": "M&A Planning",
+      "path": "/Legal/M&A Planning",
+      "sensitivityLabel": "Confidential",
+      "isIndexedByCopilot": true
+    },
+    {
+      "id": "resource-legacy-site",
+      "nodeId": "site-legacy-projects",
+      "resourceType": "Site",
+      "name": "Legacy Projects",
+      "path": "/sites/legacy-projects",
+      "lastAccessedDate": "2023-01-01T00:00:00.000Z",
+      "lastModifiedDate": "2023-03-01T00:00:00.000Z",
+      "ownerIds": [],
+      "sensitivityLabel": "General",
+      "isIndexedByCopilot": true
+    }
+  ],
+  "principals": [
+    { "id": "principal-everyone-external", "displayName": "Everyone Except External Users", "principalType": "EveryoneExceptExternalUsers", "memberCount": 1200 },
+    { "id": "principal-anonymous", "displayName": "Anyone with the link", "principalType": "AnonymousLink" },
+    { "id": "principal-organization", "displayName": "Organization-wide link", "principalType": "OrganizationLink", "memberCount": 1200 }
+  ],
+  "grants": [
+    { "id": "grant-compensation-broad", "resourceId": "resource-compensation-2021", "principalId": "principal-everyone-external", "role": "Read", "grantType": "Inherited" },
+    { "id": "grant-legal-anonymous", "resourceId": "resource-legal-ma", "principalId": "principal-anonymous", "role": "Read", "grantType": "SharingLink", "linkType": "Anonymous" },
+    { "id": "grant-legacy-broad", "resourceId": "resource-legacy-site", "principalId": "principal-organization", "role": "Read", "grantType": "SharingLink", "linkType": "Organization" }
+  ]
+}

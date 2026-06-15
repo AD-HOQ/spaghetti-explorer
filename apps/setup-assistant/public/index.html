@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spaghetti Setup Assistant</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="brand"><div class="mark">S</div><div><span>Spaghetti Explorer</span><h1>Setup Assistant</h1><p>Create the tenant application, request consent, and securely connect Spaghetti.</p></div></div>
+        <a href="http://localhost:4000/admin">Open Spaghetti Admin</a>
+      </header>
+      <section class="layout">
+        <nav>
+          <button class="active" data-step="1"><b>1</b><span><strong>Configuration</strong><small>Tenant and profile</small></span></button>
+          <button data-step="2"><b>2</b><span><strong>Preview</strong><small>Review the plan</small></span></button>
+          <button data-step="3"><b>3</b><span><strong>Provision</strong><small>Create and transfer</small></span></button>
+          <button data-step="4"><b>4</b><span><strong>Consent</strong><small>Administrator approval</small></span></button>
+        </nav>
+        <div class="content">
+          <section class="step active" data-panel="1">
+            <span class="kicker">Step 1</span><h2>Connect Microsoft tenant</h2><p class="intro">Launch Microsoft sign-in, choose an administrator account, and authorize the Setup Assistant to create the Spaghetti tenant application.</p>
+            <div id="microsoftConnection" class="connection-card">
+              <div><span class="connection-dot"></span><strong>Checking Microsoft connection...</strong><p>The signed-in tenant and administrator will appear here.</p></div>
+              <a class="microsoft-button" id="connectMicrosoft" href="/api/auth/login">Connect Microsoft Tenant</a>
+              <button class="disconnect-button" id="disconnectMicrosoft" hidden>Disconnect</button>
+            </div>
+            <div class="form-grid">
+              <label><span>Connected tenant ID</span><input id="tenantId" placeholder="Populated after Microsoft sign-in" readonly /></label>
+              <label><span>Application display name</span><input id="displayName" value="Spaghetti Explorer" /></label>
+              <label><span>Permission profile</span><select id="profile"><option value="discovery">Discovery only</option><option value="remediation">Discovery + remediation</option></select></label>
+              <label><span>Consent redirect URI</span><input id="redirectUri" value="http://localhost:4100/consent-complete" /></label>
+              <label><span>Spaghetti API URL</span><input id="spaghettiApiUrl" value="http://localhost:4000" /></label>
+              <label><span>Setup handoff token</span><input id="handoffToken" type="password" placeholder="Matches SETUP_HANDOFF_TOKEN" /></label>
+            </div>
+            <div class="actions"><button class="primary" id="previewButton" disabled>Preview setup plan</button></div>
+          </section>
+          <section class="step" data-panel="2">
+            <span class="kicker">Step 2</span><h2>Review provisioning plan</h2><div id="plan"></div>
+            <div class="notice">Admin consent remains a separate Microsoft-controlled approval step. The assistant cannot bypass it.</div>
+            <div class="actions"><button data-back="1">Back</button><button class="primary" id="provisionButton">Create application and transfer configuration</button></div>
+          </section>
+          <section class="step" data-panel="3">
+            <span class="kicker">Step 3</span><h2>Provisioning</h2><div id="provisioningStatus" class="status"><strong>Ready</strong><p>The setup assistant has not started provisioning.</p></div>
+          </section>
+          <section class="step" data-panel="4">
+            <span class="kicker">Step 4</span><h2>Grant administrator consent</h2><div id="result"></div>
+            <div class="actions"><a class="primary button-link" id="consentLink" target="_blank" rel="noreferrer">Open Microsoft admin consent</a><a class="button-link" href="http://localhost:4000/admin">Return to Spaghetti Admin</a></div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

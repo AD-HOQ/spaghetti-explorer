@@ -1,0 +1,28 @@
+{
+  "name": "@access-graph/web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "dependencies": {
+    "@react-sigma/core": "^5.0.5",
+    "@sigma/node-image": "^3.0.0",
+    "fuse.js": "^7.4.2",
+    "graphology": "^0.26.0",
+    "graphology-types": "^0.24.8",
+    "html-to-image": "^1.11.13",
+    "react": "^19.0.0",
+    "react-checkbox-tree": "^1.8.0",
+    "react-dom": "^19.0.0",
+    "sigma": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.2.2"
+  }
+}

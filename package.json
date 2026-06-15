@@ -1,0 +1,17 @@
+{
+  "name": "sharepoint-access-graph",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @access-graph/api\" \"npm run dev -w @access-graph/web\"",
+    "build": "npm run build -w @access-graph/api && npm run build -w @access-graph/web && npm run build -w @spaghetti/setup-assistant",
+    "typecheck": "npm run typecheck -w @access-graph/api && npm run typecheck -w @access-graph/web && npm run typecheck -w @spaghetti/setup-assistant",
+    "security:grep": "node scripts/security-grep.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.8.2"
+  }
+}
